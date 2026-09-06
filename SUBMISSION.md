@@ -55,6 +55,9 @@ the Strands SDK. Treat AgentCore as a stretch enhancement, not a requirement.
 
 - [x] **No hardcoded secrets** — all credentials come from environment variables;
       `agent.py`/`main.py` read `AWS_*` / `BEDROCK_MODEL_ID` from the env only.
+      The Streamlit app's optional "bring your own temporary credentials" panel
+      keeps pasted STS tokens **in memory for one run only** (never stored/logged;
+      env restored after the call).
 - [x] `.env` is git-ignored (only `.env.example` with placeholders is committed).
 - [x] `.venv/` and generated `memory/*.json` are git-ignored.
 - [x] **Repo scanned before pushing** — verified no secrets in tracked source

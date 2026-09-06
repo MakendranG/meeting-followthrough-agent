@@ -188,6 +188,36 @@ Because the app defaults to keyless Demo mode, you can deploy it publicly with
 > locally** (where your AWS creds already work) so judges see the real Bedrock
 > agent in action. Best of both.
 
+### Let a visitor run it live on *their own* AWS (optional)
+
+The app includes an **"🔑 Advanced: use my own AWS (temporary session
+credentials)"** panel in the sidebar. A curious judge can run the agent live
+against **their own** AWS account without you funding it — and without pasting
+long-lived keys:
+
+1. They generate short-lived STS credentials, e.g.:
+   ```bash
+   aws sts get-session-token
+   ```
+   (or copy the temporary credentials from their SSO "command line access" screen).
+2. They paste the **Access Key ID**, **Secret**, and **Session Token** (plus
+   region) into the Advanced panel and switch to **Live agent** mode.
+
+Security properties of this panel:
+- Credentials are held **in memory for that one run only** — never written to
+  disk, never logged, never committed.
+- `_run_live()` applies them to the process environment just for the duration of
+  the call and **restores the previous environment afterward**.
+- It expects **temporary** (auto-expiring) STS tokens, not permanent keys.
+
+> **Why not "sign in with your AWS Console session"?** A web app *cannot* borrow
+> a visitor's AWS Console login — browser cross-site cookie isolation and AWS's
+> security model prevent it, and Console session cookies aren't usable API
+> credentials. The proper "log in, no keys" pattern is federated identity
+> (Amazon Cognito → STS), which is heavier infrastructure and out of scope for a
+> hosted hackathon demo. Short-lived STS credentials via the Advanced panel are
+> the practical, secure middle ground.
+
 > ⚠️ **Cost/security note:** in Live mode the agent calls Amazon Bedrock, which
 > incurs per-request cost and needs credentials. A *public* Live deploy means
 > every visitor's click spends against your AWS account. Never commit

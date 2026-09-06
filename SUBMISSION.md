@@ -4,6 +4,7 @@
 **Project:** Meeting Follow-Through Agent
 **Built With:** Strands Agents SDK + Amazon Bedrock
 **Repository:** https://github.com/MakendranG/meeting-followthrough-agent (public)
+**Live demo:** https://meeting-followthrough-agent.streamlit.app/ (keyless Demo mode)
 **Deadline:** 15 Sept 2026 @ 5:30am GMT+5:30 — submit 3–4 hours early.
 
 Use this to make sure nothing required is missing before submitting on Devpost.
@@ -29,13 +30,11 @@ Use this to make sure nothing required is missing before submitting on Devpost.
       - [ ] say "Strands Agents SDK" out loud / on a slide
 - [ ] **AWS Builder ID** — create one at the AWS Builder ID portal and add it to
       the Devpost submission form.
-- [ ] *(Optional, scores higher)* **Live demo link** — deploy the Streamlit app
-      (`app.py`) to Streamlit Community Cloud (**no Secrets needed** — it defaults
-      to keyless Demo mode using the real cached `sample_data/demo_result.json`).
-      Add AWS Secrets only if you want the hosted app to run live on Bedrock.
-      Add the URL to Devpost and to `docs/index.html`. A visual GitHub Pages
-      landing page is in `docs/` (enable via Settings → Pages → branch `main`
-      / `/docs`).
+- [x] *(Optional, scores higher)* **Live demo link** —
+      https://meeting-followthrough-agent.streamlit.app/ (Streamlit Community
+      Cloud, **keyless Demo mode** — no Secrets needed). Add AWS Secrets only if
+      you want the hosted app to run live on Bedrock. Also linked from the
+      GitHub Pages landing page in `docs/`.
 - [ ] *(Optional bonus points)* **builder.aws.com post** — publish your build
       journey with "Agents for Humans" in the title before the deadline.
 

@@ -4,6 +4,7 @@
 **Built With: Strands Agents SDK.**
 
 **Repository:** https://github.com/MakendranG/meeting-followthrough-agent
+**Live demo:** https://meeting-followthrough-agent.streamlit.app/ (keyless — runs in Demo mode)
 
 > **The action item you agreed to last week? Nobody checked if it got done.**
 > This agent does. It reads a meeting, remembers who committed to what, and at

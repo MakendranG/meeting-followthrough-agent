@@ -1,37 +1,6 @@
-# builder.aws.com article — copy/paste into the "Create an article" editor
-
-This file maps directly to the builder.aws.com fields. Copy each section into
-the matching field. (This markdown file itself is just the source — paste the
-parts below.)
-
----
-
-## TITLE  (paste into "Title", ≤255 chars)
-
-Agents for Humans: I Built a Meeting Follow-Through Agent with the Strands Agents SDK and Amazon Bedrock
-
----
-
-## DESCRIPTION  (paste into "Description", ≤512 chars)
+# Agents for Humans: I Built a Meeting Follow-Through Agent with the Strands Agents SDK and Amazon Bedrock
 
 Meeting action items get agreed on out loud and then quietly evaporate. I built a Strands Agents SDK agent on Amazon Bedrock that extracts commitments from one meeting, remembers them, and checks the next meeting to see what actually got done — then drafts follow-up nudges for whatever slipped. Here's how it works and what I learned.
-
----
-
-## TAGS  (add up to 5)
-
-Agents for Humans, Strands Agents, Amazon Bedrock, AI Agents, Productivity
-
----
-
-## COVER IMAGE (optional)
-
-Suggestion: a 1200×675 screenshot of the app's follow-through table (the
-green/amber/red status cards). Avoid text-heavy images per the editor's note.
-
----
-
-## BODY  (paste everything below into "Body")
 
 ## The problem nobody builds for
 
@@ -54,20 +23,20 @@ Give it two transcripts — an earlier meeting and a later one — and it produc
 
 Here's the follow-through table from the sample run:
 
-```
-OWNER      STATUS            ACTION ITEM
-Marcus     ✅ DONE           Deploy rate limiting on the invite endpoint
-Dana       ✅ DONE           Finalize empty-state designs & hand off Figma
-Leo        ⚠️ NOT_MENTIONED  Draft the launch blog post
-Sam        🔄 IN_PROGRESS    Build the conversion funnel dashboard
-Summary: 2 done · 1 in progress · 1 at risk (not mentioned)
-```
+| Owner | Status | Action item |
+|-------|--------|-------------|
+| Marcus | ✅ DONE | Deploy rate limiting on the invite endpoint |
+| Dana | ✅ DONE | Finalize empty-state designs & hand off Figma |
+| Leo | ⚠️ NOT_MENTIONED | Draft the launch blog post |
+| Sam | 🔄 IN_PROGRESS | Build the conversion funnel dashboard |
+
+**Summary: 2 done · 1 in progress · 1 at risk (not mentioned)**
 
 Leo's blog post never came up in Meeting 2 — so the agent flags it and drafts the nudge automatically.
 
 ## The design: two Strands tools + memory
 
-The whole thing is built with the **[Strands Agents SDK](https://strandsagents.com/)**. What makes it more than a summarizer is a deliberate **two-tool design** plus a small persistent-memory layer.
+The whole thing is built with the [Strands Agents SDK](https://strandsagents.com/). What makes it more than a summarizer is a deliberate **two-tool design** plus a small persistent-memory layer.
 
 **Tool A — `extract_action_items(transcript_text)`**
 Parses one transcript into structured items: `description`, `owner`, `deadline` (or `"unspecified"`). It only keeps real commitments with a clear owner and drops anything explicitly parked.
@@ -124,8 +93,8 @@ There's also an optional "bring your own **temporary** STS credentials" panel so
 
 ## Try it
 
-- **Live demo:** https://meeting-followthrough-agent.streamlit.app/
-- **Project page:** https://makendrang.github.io/meeting-followthrough-agent/
-- **Code (MIT):** https://github.com/MakendranG/meeting-followthrough-agent
+- **Live demo:** <https://meeting-followthrough-agent.streamlit.app/>
+- **Project page:** <https://makendrang.github.io/meeting-followthrough-agent/>
+- **Code (MIT):** <https://github.com/MakendranG/meeting-followthrough-agent>
 
 Built with the Strands Agents SDK and Amazon Bedrock for the Agents for Humans hackathon. If you run recurring meetings, this is the teammate that quietly makes sure the things people promised actually get done.

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Meeting Follow-Through Agent — Agents for Humans</title>
+<meta name="description" content="A Strands Agents SDK agent that extracts meeting action items, remembers them, and checks the next meeting for follow-through — then drafts nudges for what fell through." />
+<style>
+  :root{
+    --indigo:#4f46e5; --violet:#7c3aed; --ink:#1f2430; --muted:#5b6170;
+    --green-bg:#d1e7dd; --green-fg:#0f5132;
+    --amber-bg:#fff3cd; --amber-fg:#664d03;
+    --red-bg:#f8d7da; --red-fg:#842029;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);line-height:1.6;background:#fff}
+  a{color:var(--violet)}
+  .wrap{max-width:960px;margin:0 auto;padding:0 20px}
+  .hero{background:linear-gradient(135deg,var(--indigo) 0%,var(--violet) 100%);color:#fff;padding:64px 0 56px}
+  .hero h1{font-size:2.6rem;margin:0 0 .4rem}
+  .hero p.tag{font-size:1.25rem;color:#e9e7ff;margin:0 0 1.4rem;max-width:720px}
+  .badges span{display:inline-block;background:rgba(255,255,255,.18);color:#fff;padding:4px 12px;border-radius:20px;font-size:.82rem;margin:0 .4rem .4rem 0}
+  .cta{margin-top:1.6rem}
+  .btn{display:inline-block;padding:12px 22px;border-radius:10px;font-weight:700;text-decoration:none;margin:0 .5rem .6rem 0}
+  .btn-primary{background:#fff;color:var(--violet)}
+  .btn-ghost{background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.5)}
+  section{padding:44px 0;border-bottom:1px solid #eee}
+  h2{font-size:1.7rem;margin:0 0 1rem}
+  .lead{color:var(--muted);font-size:1.08rem}
+  .cols{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-top:1rem}
+  .card{border:1px solid #e7e7ef;border-radius:14px;padding:18px}
+  .card h3{margin:.1rem 0 .4rem;font-size:1.05rem}
+  .card p{margin:0;color:var(--muted);font-size:.95rem}
+  table{width:100%;border-collapse:collapse;margin-top:.6rem;font-size:.95rem}
+  th,td{text-align:left;padding:10px;border-bottom:1px solid #eee}
+  th{border-bottom:2px solid #ddd}
+  .pill{padding:3px 10px;border-radius:12px;font-weight:600;font-size:.82rem;white-space:nowrap}
+  .done{background:var(--green-bg);color:var(--green-fg)}
+  .prog{background:var(--amber-bg);color:var(--amber-fg)}
+  .risk{background:var(--red-bg);color:var(--red-fg)}
+  .nudge{border-left:4px solid var(--violet);background:#faf9ff;padding:14px 16px;border-radius:8px;margin-top:1rem}
+  pre{background:#0f1220;color:#e6e6f0;padding:16px;border-radius:10px;overflow:auto;font-size:.88rem}
+  footer{padding:30px 0;color:var(--muted);font-size:.9rem}
+  @media(max-width:720px){.cols{grid-template-columns:1fr}.hero h1{font-size:2rem}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>✅ Meeting Follow-Through Agent</h1>
+    <p class="tag">The action item you agreed to last week? Nobody checked if it got done — until now.</p>
+    <div class="badges">
+      <span>Built With: Strands Agents SDK</span>
+      <span>Amazon Bedrock</span>
+      <span>Agents for Humans · Professional track</span>
+    </div>
+    <div class="cta">
+      <!-- Replace the # links after you deploy the live demo and upload the video. -->
+      <a class="btn btn-primary" href="#" id="demo-link">▶ Launch live demo</a>
+      <a class="btn btn-ghost" href="#" id="video-link">🎬 Watch the 5-min video</a>
+      <a class="btn btn-ghost" href="https://github.com/MakendranG/meeting-followthrough-agent">⭐ View code on GitHub</a>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>The problem</h2>
+    <p class="lead">
+      After meetings, action items get agreed on verbally and then quietly
+      evaporate — not because people don't intend to do them, but because there's
+      no lightweight system that both <b>extracts</b> commitments from a meeting
+      <b>and checks</b>, at the next meeting, whether they were actually done.
+      Most tools only do the first half. This agent goes beyond summarizing: it
+      has <b>memory and follow-through across meetings</b>.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>How it works — two Strands tools + memory</h2>
+    <div class="cols">
+      <div class="card">
+        <h3>① extract_action_items</h3>
+        <p>Parses a transcript into structured items: description, owner, deadline. Runs on Meeting 1 and stores the result as persistent memory.</p>
+      </div>
+      <div class="card">
+        <h3>② check_followthrough</h3>
+        <p>Compares the prior meeting's stored items against the new transcript and tags each DONE, IN_PROGRESS, or NOT_MENTIONED (at risk).</p>
+      </div>
+      <div class="card">
+        <h3>③ draft the nudge</h3>
+        <p>For every at-risk item, the LLM drafts a polite, ready-to-send follow-up message to the person responsible.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>What the agent produces</h2>
+    <p class="lead">Example follow-through report from the bundled sample meetings:</p>
+    <table>
+      <thead><tr><th>Owner</th><th>Status</th><th>Action item</th></tr></thead>
+      <tbody>
+        <tr><td><b>Marcus</b></td><td><span class="pill done">✅ DONE</span></td><td>Deploy rate limiting on the invite endpoint</td></tr>
+        <tr><td><b>Dana</b></td><td><span class="pill done">✅ DONE</span></td><td>Finalize empty-state designs & hand off Figma</td></tr>
+        <tr><td><b>Leo</b></td><td><span class="pill risk">⚠️ NOT_MENTIONED</span></td><td>Draft the launch blog post</td></tr>
+        <tr><td><b>Sam</b></td><td><span class="pill prog">🔄 IN_PROGRESS</span></td><td>Build the conversion funnel dashboard</td></tr>
+      </tbody>
+    </table>
+    <div class="nudge">
+      <b>✉️ Auto-drafted nudge to Leo:</b><br>
+      "Hi Leo! I noticed we didn't get a chance to touch on the launch blog post
+      in our latest meeting. Just wanted to check in on where that stands — do
+      you need any help or input from me to move it forward?"
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Who it's for</h2>
+    <p class="lead">
+      Managers, team leads, project coordinators, and scrum masters — anyone
+      running recurring meetings where the same group commits to work week after
+      week. It surfaces the at-risk items <b>before</b> they become fire drills.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Run it yourself</h2>
+    <pre>git clone https://github.com/MakendranG/meeting-followthrough-agent.git
+cd meeting-followthrough-agent
+pip install -r requirements.txt
+
+# Web UI (this visual app):
+AWS_REGION=us-east-1 streamlit run app.py
+
+# …or the CLI:
+AWS_REGION=us-east-1 python main.py</pre>
+    <p class="lead">Requires Python 3.10+ and AWS Bedrock access (Claude Sonnet 4 family).</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Built with the <a href="https://strandsagents.com/">Strands Agents SDK</a> and Amazon Bedrock ·
+    MIT Licensed ·
+    <a href="https://github.com/MakendranG/meeting-followthrough-agent">Source on GitHub</a>
+  </div>
+</footer>
+
+</body>
+</html>

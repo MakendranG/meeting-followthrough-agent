@@ -29,9 +29,17 @@ Use this to make sure nothing required is missing before submitting on Devpost.
       - [ ] say "Strands Agents SDK" out loud / on a slide
 - [ ] **AWS Builder ID** — create one at the AWS Builder ID portal and add it to
       the Devpost submission form.
-- [ ] *(Optional, scores higher)* **Live demo link** — a hosted/testable instance.
+- [ ] *(Optional, scores higher)* **Live demo link** — deploy the Streamlit app
+      (`app.py`) to Streamlit Community Cloud or AWS; add the URL to Devpost and
+      to `docs/index.html`. A visual GitHub Pages landing page is in `docs/`
+      (enable via Settings → Pages → branch `main` / `/docs`).
 - [ ] *(Optional bonus points)* **builder.aws.com post** — publish your build
       journey with "Agents for Humans" in the title before the deadline.
+
+### Amazon Bedrock AgentCore — optional
+Per the rules, AgentCore deployment "strengthens your Technical Implementation
+score, but it's not required." The project already runs on Amazon Bedrock via
+the Strands SDK. Treat AgentCore as a stretch enhancement, not a requirement.
 
 ## "Impossible to miss" Strands usage (per organizer tips)
 

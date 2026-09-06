@@ -79,6 +79,7 @@ at-risk item. `main.py` orchestrates the whole flow and prints the report.
 meeting-followthrough-agent/
 ├── agent.py                     # Strands agent + the two @tool functions + drafting
 ├── main.py                      # CLI entry point that runs the full flow
+├── app.py                       # Streamlit web UI (live demo) over the same tools
 ├── demo.sh                      # one-command setup + run for judges
 ├── requirements.txt
 ├── .env.example                 # copy to .env and fill in (no secrets committed)
@@ -131,6 +132,63 @@ That runs the full flow against the bundled sample transcripts. To use your own:
 ```bash
 python main.py --meeting1 path/to/earlier.txt --meeting2 path/to/later.txt
 ```
+
+## Web UI (live demo)
+
+Prefer a browser to a terminal? A Streamlit front-end (`app.py`) wraps the exact
+same two Strands tools: paste two transcripts, click **Run the agent**, and see
+the new action items, the follow-through table, and the drafted nudges rendered
+live.
+
+```bash
+# from the project folder, with the venv active and AWS creds set:
+pip install -r requirements.txt
+AWS_REGION=us-east-1 streamlit run app.py
+```
+Then open the URL Streamlit prints (default http://localhost:8501).
+
+### Deploying a public live demo
+
+The app is a standard Streamlit app, so any Streamlit host works. Two options:
+
+- **Streamlit Community Cloud (free, fastest):** push this repo to GitHub (done),
+  go to <https://share.streamlit.io>, pick the repo, set the main file to
+  `app.py`, and add your AWS credentials as **Secrets**
+  (`AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_REGION`, optionally
+  `BEDROCK_MODEL_ID`). Share the resulting URL (unlisted is fine for judges).
+- **AWS (App Runner / ECS):** containerize with a `streamlit run app.py` entry
+  command and attach an IAM role with Bedrock access — no static keys needed.
+
+> ⚠️ **Cost/security note:** the agent calls Amazon Bedrock, which incurs
+> per-request cost and needs credentials. For a *public* URL, prefer an
+> unlisted link for judges and/or an IAM role over static keys, and consider a
+> simple usage cap. Never commit credentials — this repo keeps them in env vars
+> and secrets only.
+
+### Project landing page (GitHub Pages)
+
+A static showcase page lives in [`docs/index.html`](./docs/index.html) — a
+visual overview with the problem, the two-tool design, a sample follow-through
+table, and buttons to the live demo / video / repo. To publish it:
+
+1. Push this repo (done).
+2. On GitHub: **Settings → Pages → Build and deployment → Source: Deploy from a
+   branch**, then select **branch `main`, folder `/docs`**, and Save.
+3. GitHub serves it at `https://MakendranG.github.io/meeting-followthrough-agent/`.
+4. Edit the `#` placeholders in `docs/index.html` (`Launch live demo`,
+   `Watch the video`) to point at your Streamlit URL and YouTube link.
+
+> **Note:** GitHub Pages is *static hosting* — it presents the project and links
+> out, but it can't run the Python agent or call Bedrock. The runnable live demo
+> is the Streamlit app above; Pages is the polished front door to it.
+
+### Is Amazon Bedrock AgentCore required? No.
+
+Per the hackathon rules, deploying to **Bedrock AgentCore is optional** — it
+"strengthens your Technical Implementation score, but it's not required." This
+project runs on Amazon Bedrock today (via the Strands SDK's default provider).
+AgentCore is a possible enhancement, not a prerequisite for a complete,
+eligible submission.
 
 ## Sample output
 

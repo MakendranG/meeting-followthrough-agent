@@ -6,3 +6,7 @@ strands-agents>=1.0.0
 # .env file during development. Not required in production (use real env vars
 # or an IAM role instead).
 python-dotenv>=1.0.0
+
+# Web UI (app.py) — a browser front-end over the same two Strands tools used by
+# the CLI. Only needed if you run `streamlit run app.py`.
+streamlit>=1.36.0

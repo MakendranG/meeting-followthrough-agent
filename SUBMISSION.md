@@ -30,9 +30,12 @@ Use this to make sure nothing required is missing before submitting on Devpost.
 - [ ] **AWS Builder ID** — create one at the AWS Builder ID portal and add it to
       the Devpost submission form.
 - [ ] *(Optional, scores higher)* **Live demo link** — deploy the Streamlit app
-      (`app.py`) to Streamlit Community Cloud or AWS; add the URL to Devpost and
-      to `docs/index.html`. A visual GitHub Pages landing page is in `docs/`
-      (enable via Settings → Pages → branch `main` / `/docs`).
+      (`app.py`) to Streamlit Community Cloud (**no Secrets needed** — it defaults
+      to keyless Demo mode using the real cached `sample_data/demo_result.json`).
+      Add AWS Secrets only if you want the hosted app to run live on Bedrock.
+      Add the URL to Devpost and to `docs/index.html`. A visual GitHub Pages
+      landing page is in `docs/` (enable via Settings → Pages → branch `main`
+      / `/docs`).
 - [ ] *(Optional bonus points)* **builder.aws.com post** — publish your build
       journey with "Agents for Humans" in the title before the deadline.
 

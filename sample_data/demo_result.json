@@ -1,0 +1,79 @@
+{
+  "_note": "Real cached output from a live Amazon Bedrock (Claude Sonnet 4.5) run via the Strands agent. Used for the keyless public demo mode. Regenerate with scripts/generate_demo_result.py.",
+  "meeting_1_action_items": [
+    {
+      "description": "Deploy rate limiting on the invite endpoint to staging",
+      "owner": "Marcus",
+      "deadline": "Friday"
+    },
+    {
+      "description": "Finalize empty-state designs and hand off Figma files to engineering",
+      "owner": "Dana",
+      "deadline": "next Wednesday"
+    },
+    {
+      "description": "Draft the launch blog post and send for review",
+      "owner": "Leo",
+      "deadline": "unspecified"
+    },
+    {
+      "description": "Build conversion funnel dashboard",
+      "owner": "Sam",
+      "deadline": "June 30"
+    }
+  ],
+  "meeting_2_action_items": [
+    {
+      "description": "Wire up empty-state designs",
+      "owner": "Marcus",
+      "deadline": "this week"
+    },
+    {
+      "description": "Run end-to-end QA pass on onboarding and log bugs",
+      "owner": "Marcus",
+      "deadline": "June 16"
+    },
+    {
+      "description": "Do accessibility audit of onboarding screens",
+      "owner": "Dana",
+      "deadline": "June 18"
+    },
+    {
+      "description": "Compile Q2 churn report",
+      "owner": "Sam",
+      "deadline": "June 20"
+    }
+  ],
+  "followthrough": [
+    {
+      "description": "Deploy rate limiting on the invite endpoint to staging",
+      "owner": "Marcus",
+      "status": "DONE",
+      "evidence": "Marcus stated: 'the rate limiting on the invite endpoint is done. I deployed it to staging Friday and it's already promoted to production as of this morning.'"
+    },
+    {
+      "description": "Finalize empty-state designs and hand off Figma files to engineering",
+      "owner": "Dana",
+      "status": "DONE",
+      "evidence": "Dana stated: 'I finished the illustrations and handed off the final Figma files yesterday. Marcus, you should have the link.' Marcus confirmed receipt."
+    },
+    {
+      "description": "Draft the launch blog post and send for review",
+      "owner": "Leo",
+      "status": "NOT_MENTIONED",
+      "evidence": "The transcript explicitly notes 'The launch blog post that Leo committed to in Meeting 1 was not discussed at all in this meeting.' No evidence of completion or progress was provided."
+    },
+    {
+      "description": "Build conversion funnel dashboard",
+      "owner": "Sam",
+      "status": "IN_PROGRESS",
+      "evidence": "Sam stated: 'Still in progress. I've got the event instrumentation wired up and about half the charts built, but the cohort comparison view isn't done yet. I'm on track for the June 30 date though.'"
+    }
+  ],
+  "followups": [
+    {
+      "owner": "Leo",
+      "message": "Hi Leo! I noticed we didn't get a chance to discuss the launch blog post during our last meeting. Just wanted to check in on where that stands \u2014 do you need any input or help from me to move it forward?"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+SYNTHETIC SAMPLE DATA — NOT A REAL MEETING.
+Weekly Product Sync — Meeting 1
+Date: Monday, June 2
+Attendees: Priya (PM), Marcus (Engineering), Dana (Design), Leo (Marketing), Sam (Data)
+
+---
+
+Priya: Thanks everyone for joining. Let's run through the launch plan for the new onboarding flow. First up, the API work. Marcus, where are we?
+
+Marcus: The signup endpoints are mostly there. The one gap is rate limiting on the invite endpoint.
+
+Priya: Okay. Marcus, can you finish and deploy the rate limiting on the invite endpoint by this Friday? We can't ship without it.
+
+Marcus: Yep, I'll own that. Friday works. I'll get the rate limiting deployed to staging by Friday.
+
+Priya: Great. Dana, on the design side — the empty-state screens still feel unfinished.
+
+Dana: Agreed. I need to redo the empty-state illustrations and hand off the final Figma files.
+
+Priya: Can you get the finalized empty-state designs handed off to engineering by next Wednesday?
+
+Dana: Yes, I'll have the empty-state Figma handoff done by next Wednesday.
+
+Priya: Perfect. Leo, marketing. We talked about the launch announcement.
+
+Leo: Right. I'll draft the launch blog post and the email announcement. I don't have a hard date yet, but I'll get a first draft circulating.
+
+Priya: Let's just say — Leo, please draft the launch blog post and send it around for review. Deadline is open for now, just get a draft going soon.
+
+Leo: Got it, I'll write the launch blog post draft.
+
+Priya: Sam, on analytics — we need to know if the new flow actually improves conversion.
+
+Sam: I can set up the funnel tracking dashboard so we can measure signup conversion before and after.
+
+Priya: That's important. Sam, can you build the conversion funnel dashboard by the end of the month, June 30?
+
+Sam: Sure, I'll have the conversion funnel dashboard ready by June 30.
+
+Priya: One more thing. Someone needs to update the help-center documentation for the new onboarding steps.
+
+Dana: I can't take that on top of the illustrations.
+
+Marcus: I'm slammed with the API work.
+
+Priya: Okay, let's park the help-center docs for now and revisit. That's not assigned yet.
+
+Priya: To recap the commitments: Marcus deploys invite rate limiting by Friday, Dana hands off empty-state designs by next Wednesday, Leo drafts the launch blog post, and Sam builds the conversion funnel dashboard by June 30. Thanks everyone.

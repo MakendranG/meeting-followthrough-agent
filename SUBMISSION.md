@@ -1,0 +1,72 @@
+# Submission Checklist — Agents for Humans Hackathon
+
+**Track:** Professional Agents
+**Project:** Meeting Follow-Through Agent
+**Built With:** Strands Agents SDK + Amazon Bedrock
+**Deadline:** 15 Sept 2026 @ 5:30am GMT+5:30 — submit 3–4 hours early.
+
+Use this to make sure nothing required is missing before submitting on Devpost.
+
+## Required submission items
+
+- [x] **Text description** — what it does, who it's for, how it works
+      → see `README.md` (leads with the problem; names Strands Agents explicitly).
+- [ ] **Public URL to code repo** — push this folder to a public GitHub repo.
+- [x] **All source code + setup instructions to run it** — `agent.py`, `main.py`,
+      `demo.sh`, `requirements.txt`, `.env.example`, `sample_data/`.
+- [x] **MIT or Apache license** — `LICENSE` (MIT) is present.
+      - [ ] **Confirm it's visible in the repo's About/sidebar** on GitHub. GitHub
+        auto-detects a top-level `LICENSE` file; after pushing, check that the
+        repo sidebar shows "MIT License." Add a placeholder name in the
+        copyright line if you haven't (currently `<Your Name>`).
+- [x] **README** — present, with cold-start setup a stranger can follow.
+- [x] **Architecture diagram** — `ARCHITECTURE.md` (Mermaid).
+- [ ] **Demo video (≤ 5 minutes)** — record using `DEMO_SCRIPT.md`. Must:
+      - [ ] show the project working end-to-end (the follow-through table + nudge)
+      - [ ] cover (1) the problem, (2) who it's for, (3) why it matters
+      - [ ] be uploaded publicly to YouTube or Vimeo; put the link on Devpost
+      - [ ] say "Strands Agents SDK" out loud / on a slide
+- [ ] **AWS Builder ID** — create one at the AWS Builder ID portal and add it to
+      the Devpost submission form.
+- [ ] *(Optional, scores higher)* **Live demo link** — a hosted/testable instance.
+- [ ] *(Optional bonus points)* **builder.aws.com post** — publish your build
+      journey with "Agents for Humans" in the title before the deadline.
+
+## "Impossible to miss" Strands usage (per organizer tips)
+
+- [x] Named in the README title/summary and a **Built With** section.
+- [x] Two custom `@tool` functions in `agent.py` (`extract_action_items`,
+      `check_followthrough`) — the core of the agent.
+- [ ] Shown clearly in the demo video.
+
+## Security / hygiene (per organizer tips)
+
+- [x] **No hardcoded secrets** — all credentials come from environment variables;
+      `agent.py`/`main.py` read `AWS_*` / `BEDROCK_MODEL_ID` from the env only.
+- [x] `.env` is git-ignored (only `.env.example` with placeholders is committed).
+- [x] `.venv/` and generated `memory/*.json` are git-ignored.
+- [ ] **Scan the repo one more time before pushing** (e.g. `git secrets`, or a
+      manual grep for `AKIA` / `aws_secret_access_key`) — verified no secrets in
+      tracked source at build time; re-verify after any edits.
+
+## Judging-criteria self-check
+
+- **Technological Implementation** — non-trivial two-tool Strands design; runs
+  end-to-end on Amazon Bedrock. (Optional: deploy to Bedrock AgentCore or add a
+  live demo to strengthen this score.)
+- **Design** — complete product experience: clear CLI report, persistent memory,
+  drafted follow-ups — not just a proof of concept.
+- **Potential Impact** — specific audience (people running recurring meetings)
+  and a concrete pain (commitments dying between meetings).
+- **Creativity & Originality** — the follow-through *check across meetings* is
+  the non-obvious part; most tools stop at summarizing one meeting.
+- **Presentation** — `DEMO_SCRIPT.md` keeps the video ≤ 5 min and on-message.
+
+## Before you click submit
+
+- [ ] Repo is **public**.
+- [ ] Fill in the copyright name in `LICENSE`.
+- [ ] `demo.sh` runs clean from a fresh clone (test on a machine without the
+      `.venv` already present).
+- [ ] Video link works in an incognito window.
+- [ ] Save a Devpost **draft** early; you can keep editing until the deadline.

@@ -1,0 +1,8 @@
+# Core dependency — the Strands Agents SDK (Python).
+# This is what the agent and its two custom @tool functions are built with.
+strands-agents>=1.0.0
+
+# Optional developer convenience: load AWS credentials / config from a local
+# .env file during development. Not required in production (use real env vars
+# or an IAM role instead).
+python-dotenv>=1.0.0

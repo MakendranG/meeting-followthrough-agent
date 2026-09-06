@@ -1,0 +1,24 @@
+# Secrets / environment — never commit real credentials
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Generated agent memory / run artifacts (keep the folder, ignore the JSON
+# the agent writes at runtime so demo runs stay reproducible from scratch)
+memory/*.json
+
+# OS / editor cruft
+.DS_Store
+.idea/
+.vscode/

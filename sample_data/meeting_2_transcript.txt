@@ -1,0 +1,37 @@
+SYNTHETIC SAMPLE DATA — NOT A REAL MEETING.
+Weekly Product Sync — Meeting 2
+Date: Monday, June 9
+Attendees: Priya (PM), Marcus (Engineering), Dana (Design), Leo (Marketing), Sam (Data)
+
+---
+
+Priya: Morning all. Let's start with follow-ups from last week, then cover new work.
+
+Marcus: Good news — the rate limiting on the invite endpoint is done. I deployed it to staging Friday and it's already promoted to production as of this morning. Load tested it too, holds up fine.
+
+Priya: Excellent, that unblocks the launch. Dana, how about the empty-state designs?
+
+Dana: I finished the illustrations and handed off the final Figma files yesterday. Marcus, you should have the link.
+
+Marcus: Got it, thanks. I'll wire those up this week.
+
+Priya: Great, that's two down. Sam, the conversion funnel dashboard?
+
+Sam: Still in progress. I've got the event instrumentation wired up and about half the charts built, but the cohort comparison view isn't done yet. I'm on track for the June 30 date though.
+
+Priya: Good, keep going. Now for new items. Marcus, once Dana's designs are wired in, we need a full QA pass on the onboarding flow.
+
+Marcus: I'll run the end-to-end QA pass on onboarding and log any bugs by June 16.
+
+Priya: Perfect. And Dana, can you also do a quick accessibility review of the new screens?
+
+Dana: Yes, I'll do the accessibility audit of the onboarding screens by June 18.
+
+Priya: Sam, separately, can you pull last quarter's churn numbers for the board deck?
+
+Sam: Sure, I'll compile the Q2 churn report by June 20.
+
+Priya: That's everything. Thanks team.
+
+---
+Note: The launch blog post that Leo committed to in Meeting 1 was not discussed at all in this meeting.

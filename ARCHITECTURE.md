@@ -6,6 +6,24 @@
 "Architecture diagram" field. Source: `docs/architecture.svg` / the Mermaid
 below.)*
 
+## The five elements (per the hackathon FAQ)
+
+The diagram labels each element the judges' FAQ asks for:
+
+1. **User input / interface** — a **CLI** (`main.py`) and a **Streamlit web app**
+   (`app.py`); the user provides a Meeting 1 and a Meeting 2 transcript.
+2. **Strands Agents (core + agentic loop)** — the `meeting_followthrough_agent`
+   Strands agent runs the loop *model → tools → reasoning → response*, calling
+   its two `@tool` functions and the drafting step until the report is complete.
+3. **Tools & integrations** — the two custom tools (`extract_action_items`,
+   `check_followthrough`) plus a local **JSON memory store** that persists
+   Meeting 1's items across meetings.
+4. **AWS services** — **Amazon Bedrock** (Claude, Sonnet 4 family) provides all
+   the language reasoning inside the tools and the follow-up drafting.
+5. **Output** — a final report: (a) Meeting 2's new action items, (b) the
+   follow-through status table (DONE / IN_PROGRESS / NOT_MENTIONED), and
+   (c) drafted follow-up messages for at-risk items.
+
 The Meeting Follow-Through Agent is built with the **Strands Agents SDK** and
 uses a **two-tool design** plus a small local **persistent-memory** layer. That
 combination is what makes it more than a plain meeting summarizer: it doesn't

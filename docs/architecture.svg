@@ -1,119 +1,111 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" font-family="Inter, Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="900" viewBox="0 0 1240 900" font-family="Inter, Arial, sans-serif">
   <defs>
-    <linearGradient id="bedrock" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#8b5cf6"/><stop offset="1" stop-color="#6d28d9"/>
-    </linearGradient>
-    <linearGradient id="io" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#f1f5f9"/><stop offset="1" stop-color="#e2e8f0"/>
-    </linearGradient>
-    <linearGradient id="store" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#38bdf8"/><stop offset="1" stop-color="#0284c7"/>
-    </linearGradient>
-    <linearGradient id="out" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#34d399"/><stop offset="1" stop-color="#059669"/>
-    </linearGradient>
-    <linearGradient id="hero" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#4f46e5"/><stop offset="0.5" stop-color="#7c3aed"/><stop offset="1" stop-color="#9333ea"/>
-    </linearGradient>
-    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
-      <path d="M0,0 L8,3 L0,6 Z" fill="#64748b"/>
-    </marker>
-    <marker id="arrowR" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
-      <path d="M0,0 L8,3 L0,6 Z" fill="#dc2626"/>
-    </marker>
-    <filter id="sh" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.18"/>
-    </filter>
+    <linearGradient id="bedrock" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8b5cf6"/><stop offset="1" stop-color="#6d28d9"/></linearGradient>
+    <linearGradient id="io" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f1f5f9"/><stop offset="1" stop-color="#e2e8f0"/></linearGradient>
+    <linearGradient id="store" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#38bdf8"/><stop offset="1" stop-color="#0284c7"/></linearGradient>
+    <linearGradient id="out" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#34d399"/><stop offset="1" stop-color="#059669"/></linearGradient>
+    <linearGradient id="hero" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4f46e5"/><stop offset="0.5" stop-color="#7c3aed"/><stop offset="1" stop-color="#9333ea"/></linearGradient>
+    <linearGradient id="aws" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff9900"/><stop offset="1" stop-color="#ec7211"/></linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,3 L0,6 Z" fill="#64748b"/></marker>
+    <marker id="arrowR" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,3 L0,6 Z" fill="#dc2626"/></marker>
+    <marker id="arrowP" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,3 L0,6 Z" fill="#7c3aed"/></marker>
+    <filter id="sh" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.18"/></filter>
   </defs>
 
-  <rect width="1200" height="760" fill="#ffffff"/>
+  <rect width="1240" height="900" fill="#ffffff"/>
 
-  <!-- Title bar -->
-  <rect x="0" y="0" width="1200" height="86" fill="url(#hero)"/>
-  <text x="40" y="44" fill="#ffffff" font-size="28" font-weight="800">Meeting Follow-Through Agent — Architecture</text>
-  <text x="40" y="70" fill="#e9d5ff" font-size="16" font-weight="500">Two Strands tools + persistent memory · reasoning on Amazon Bedrock (Claude)</text>
+  <!-- Title -->
+  <rect x="0" y="0" width="1240" height="86" fill="url(#hero)"/>
+  <text x="40" y="44" fill="#ffffff" font-size="27" font-weight="800">Meeting Follow-Through Agent — Architecture</text>
+  <text x="40" y="70" fill="#e9d5ff" font-size="15" font-weight="500">Built With: Strands Agents SDK · reasoning on Amazon Bedrock (Claude) · Agents for Humans (Professional track)</text>
 
-  <!-- Legend -->
-  <g font-size="13" font-weight="600">
-    <rect x="720" y="30" width="16" height="16" rx="4" fill="url(#bedrock)"/><text x="742" y="43" fill="#fff">Bedrock LLM step</text>
-    <rect x="905" y="30" width="16" height="16" rx="4" fill="url(#store)"/><text x="927" y="43" fill="#fff">Memory</text>
-    <rect x="1030" y="30" width="16" height="16" rx="4" fill="url(#out)"/><text x="1052" y="43" fill="#fff">Output</text>
-  </g>
-
-  <!-- Inputs -->
+  <!-- ===================== 1. USER INTERFACE ===================== -->
+  <text x="40" y="128" font-size="15" font-weight="800" fill="#4338ca">① USER INTERFACE</text>
   <g filter="url(#sh)">
-    <rect x="60" y="150" width="230" height="70" rx="14" fill="url(#io)" stroke="#94a3b8"/>
-    <text x="175" y="182" text-anchor="middle" font-size="16" font-weight="700" fill="#1e293b">🗓️ Meeting 1 transcript</text>
-    <text x="175" y="203" text-anchor="middle" font-size="12" fill="#475569">(earlier)</text>
+    <rect x="40" y="140" width="220" height="70" rx="14" fill="url(#io)" stroke="#94a3b8"/>
+    <text x="150" y="170" text-anchor="middle" font-size="15" font-weight="700" fill="#1e293b">💻 CLI — main.py</text>
+    <text x="150" y="191" text-anchor="middle" font-size="12" fill="#475569">two transcripts in → report out</text>
   </g>
   <g filter="url(#sh)">
-    <rect x="60" y="470" width="230" height="70" rx="14" fill="url(#io)" stroke="#94a3b8"/>
-    <text x="175" y="502" text-anchor="middle" font-size="16" font-weight="700" fill="#1e293b">🗓️ Meeting 2 transcript</text>
-    <text x="175" y="523" text-anchor="middle" font-size="12" fill="#475569">(later)</text>
+    <rect x="40" y="230" width="220" height="70" rx="14" fill="url(#io)" stroke="#94a3b8"/>
+    <text x="150" y="260" text-anchor="middle" font-size="15" font-weight="700" fill="#1e293b">🌐 Streamlit web app</text>
+    <text x="150" y="281" text-anchor="middle" font-size="12" fill="#475569">app.py · live demo</text>
   </g>
+  <text x="150" y="330" text-anchor="middle" font-size="12" fill="#64748b">User provides Meeting 1 &amp; Meeting 2 transcripts</text>
 
-  <!-- Tool A (M1) -->
+  <!-- ===================== 2. STRANDS AGENT + AGENTIC LOOP ===================== -->
+  <text x="330" y="128" font-size="15" font-weight="800" fill="#6d28d9">② STRANDS AGENTS — core + agentic loop</text>
+  <rect x="330" y="140" width="470" height="470" rx="18" fill="#faf5ff" stroke="#c4b5fd" stroke-dasharray="6 5"/>
+  <text x="348" y="166" font-size="13" font-weight="700" fill="#7c3aed">meeting_followthrough_agent (Strands Agent)</text>
+
+  <!-- agentic loop ring -->
+  <text x="565" y="196" text-anchor="middle" font-size="12.5" font-weight="700" fill="#6d28d9">Agentic loop:  model → tools → reasoning → response</text>
   <g filter="url(#sh)">
-    <rect x="380" y="140" width="270" height="90" rx="14" fill="url(#bedrock)"/>
-    <text x="515" y="172" text-anchor="middle" font-size="16" font-weight="800" fill="#fff">🔧 Tool A</text>
-    <text x="515" y="194" text-anchor="middle" font-size="14" fill="#ede9fe">extract_action_items</text>
-    <text x="515" y="214" text-anchor="middle" font-size="12" fill="#ddd6fe">LLM · Amazon Bedrock</text>
+    <rect x="360" y="215" width="180" height="80" rx="14" fill="url(#bedrock)"/>
+    <text x="450" y="245" text-anchor="middle" font-size="14" font-weight="800" fill="#fff">🔧 Tool A</text>
+    <text x="450" y="266" text-anchor="middle" font-size="12" fill="#ede9fe">extract_action_items</text>
+    <text x="450" y="283" text-anchor="middle" font-size="10.5" fill="#ddd6fe">owner · deadline · task</text>
   </g>
-
-  <!-- Tool A (M2) -->
   <g filter="url(#sh)">
-    <rect x="380" y="330" width="270" height="90" rx="14" fill="url(#bedrock)"/>
-    <text x="515" y="362" text-anchor="middle" font-size="16" font-weight="800" fill="#fff">🔧 Tool A — new items</text>
-    <text x="515" y="384" text-anchor="middle" font-size="14" fill="#ede9fe">extract_action_items</text>
-    <text x="515" y="404" text-anchor="middle" font-size="12" fill="#ddd6fe">LLM · Amazon Bedrock</text>
+    <rect x="590" y="215" width="180" height="80" rx="14" fill="url(#bedrock)"/>
+    <text x="680" y="245" text-anchor="middle" font-size="14" font-weight="800" fill="#fff">🔧 Tool B</text>
+    <text x="680" y="266" text-anchor="middle" font-size="12" fill="#ede9fe">check_followthrough</text>
+    <text x="680" y="283" text-anchor="middle" font-size="10" fill="#ddd6fe">DONE · IN_PROGRESS · NOT_MENTIONED</text>
   </g>
-
-  <!-- Tool B -->
   <g filter="url(#sh)">
-    <rect x="380" y="470" width="270" height="90" rx="14" fill="url(#bedrock)"/>
-    <text x="515" y="502" text-anchor="middle" font-size="16" font-weight="800" fill="#fff">🔧 Tool B</text>
-    <text x="515" y="524" text-anchor="middle" font-size="14" fill="#ede9fe">check_followthrough</text>
-    <text x="515" y="544" text-anchor="middle" font-size="12" fill="#ddd6fe">DONE / IN_PROGRESS / NOT_MENTIONED</text>
+    <rect x="475" y="330" width="210" height="72" rx="14" fill="url(#bedrock)"/>
+    <text x="580" y="360" text-anchor="middle" font-size="14" font-weight="800" fill="#fff">✍️ draft_followup_message</text>
+    <text x="580" y="381" text-anchor="middle" font-size="11" fill="#ddd6fe">nudge for at-risk items (LLM)</text>
   </g>
 
-  <!-- Memory -->
+  <!-- memory (tools/integrations bucket, inside agent scope) -->
   <g filter="url(#sh)">
-    <rect x="740" y="150" width="250" height="80" rx="14" fill="url(#store)"/>
-    <text x="865" y="182" text-anchor="middle" font-size="16" font-weight="800" fill="#fff">💾 Persistent memory</text>
-    <text x="865" y="205" text-anchor="middle" font-size="12" fill="#e0f2fe">meeting_1_action_items.json</text>
+    <rect x="360" y="440" width="410" height="66" rx="14" fill="url(#store)"/>
+    <text x="565" y="468" text-anchor="middle" font-size="14" font-weight="800" fill="#fff">💾 Persistent memory (cross-meeting)</text>
+    <text x="565" y="489" text-anchor="middle" font-size="11.5" fill="#e0f2fe">memory/meeting_1_action_items.json  ·  demo_result.json (cached)</text>
   </g>
+  <text x="565" y="540" text-anchor="middle" font-size="12" fill="#7c3aed" font-weight="600">Reasoning loop repeats per tool call until the report is complete</text>
+  <text x="565" y="562" text-anchor="middle" font-size="11" fill="#94a3b8">③ Tools &amp; integrations = the two @tool functions + local JSON memory store</text>
 
-  <!-- Drafting -->
+  <!-- ===================== 4. AWS SERVICES band ===================== -->
+  <text x="330" y="648" font-size="15" font-weight="800" fill="#b45309">④ AWS SERVICES</text>
   <g filter="url(#sh)">
-    <rect x="740" y="560" width="250" height="80" rx="14" fill="url(#bedrock)"/>
-    <text x="865" y="592" text-anchor="middle" font-size="16" font-weight="800" fill="#fff">✍️ Draft follow-up</text>
-    <text x="865" y="615" text-anchor="middle" font-size="12" fill="#ddd6fe">draft_followup_message (LLM)</text>
+    <rect x="330" y="660" width="470" height="72" rx="14" fill="url(#aws)"/>
+    <text x="565" y="690" text-anchor="middle" font-size="15" font-weight="800" fill="#fff">🧠 Amazon Bedrock — Claude (Sonnet 4 family)</text>
+    <text x="565" y="713" text-anchor="middle" font-size="11.5" fill="#fff7ed">every tool's language reasoning + message drafting runs here</text>
   </g>
 
-  <!-- Output -->
+  <!-- ===================== 5. OUTPUT ===================== -->
+  <text x="880" y="128" font-size="15" font-weight="800" fill="#047857">⑤ OUTPUT</text>
   <g filter="url(#sh)">
-    <rect x="1010" y="330" width="150" height="150" rx="14" fill="url(#out)"/>
-    <text x="1085" y="368" text-anchor="middle" font-size="15" font-weight="800" fill="#fff">📄 Final</text>
-    <text x="1085" y="388" text-anchor="middle" font-size="15" font-weight="800" fill="#fff">Report</text>
-    <text x="1085" y="416" text-anchor="middle" font-size="11" fill="#d1fae5">(a) new items</text>
-    <text x="1085" y="434" text-anchor="middle" font-size="11" fill="#d1fae5">(b) follow-through</text>
-    <text x="1085" y="452" text-anchor="middle" font-size="11" fill="#d1fae5">(c) nudges</text>
+    <rect x="880" y="300" width="300" height="200" rx="16" fill="url(#out)"/>
+    <text x="1030" y="336" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">📄 Final Report</text>
+    <text x="1030" y="372" text-anchor="middle" font-size="13" fill="#d1fae5">(a) Meeting 2 new action items</text>
+    <text x="1030" y="400" text-anchor="middle" font-size="13" fill="#d1fae5">(b) follow-through status table</text>
+    <text x="1030" y="428" text-anchor="middle" font-size="13" fill="#d1fae5">    ✅ DONE · 🔄 IN&#160;PROGRESS · ⚠️ AT&#160;RISK</text>
+    <text x="1030" y="456" text-anchor="middle" font-size="13" fill="#d1fae5">(c) drafted follow-up messages</text>
   </g>
 
-  <!-- Edges -->
-  <g stroke="#64748b" stroke-width="2.5" fill="none">
-    <path d="M290,185 L374,185" marker-end="url(#arrow)"/>            <!-- M1 -> ToolA -->
-    <path d="M650,185 L734,190" marker-end="url(#arrow)"/>            <!-- ToolA -> MEM -->
-    <path d="M290,505 L374,505" marker-end="url(#arrow)"/>            <!-- M2 -> ToolB -->
-    <path d="M230,505 C320,505 300,375 374,375" marker-end="url(#arrow)"/> <!-- M2 -> ToolA(new) -->
-    <path d="M865,230 C865,340 660,470 654,500" marker-end="url(#arrow)"/> <!-- MEM -> ToolB -->
-    <path d="M650,375 C860,375 980,390 1006,395" marker-end="url(#arrow)"/> <!-- ToolA(new) -> OUT -->
-    <path d="M650,515 C820,515 900,440 1006,430" marker-end="url(#arrow)"/> <!-- ToolB -> OUT -->
-    <path d="M990,600 C1050,600 1085,500 1085,482" marker-end="url(#arrow)"/> <!-- DRAFT -> OUT -->
-  </g>
-  <!-- at-risk edge (red) -->
-  <path d="M650,545 C700,560 700,585 734,590" stroke="#dc2626" stroke-width="2.5" fill="none" marker-end="url(#arrowR)"/>
-  <text x="656" y="583" font-size="11" font-weight="700" fill="#dc2626">at risk</text>
+  <!-- Edges: UI -> agent -->
+  <path d="M260,175 C300,175 300,250 356,250" stroke="#64748b" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+  <path d="M260,265 C300,265 310,255 356,252" stroke="#64748b" stroke-width="2.2" fill="none" marker-end="url(#arrow)"/>
 
-  <text x="40" y="720" font-size="13" fill="#94a3b8">Built With: Strands Agents SDK · Amazon Bedrock (Claude Sonnet 4 family) · Agents for Humans — Professional Agents track</text>
+  <!-- agentic loop edges (purple) -->
+  <path d="M540,255 L586,255" stroke="#7c3aed" stroke-width="2.5" fill="none" marker-end="url(#arrowP)"/>
+  <path d="M680,295 C680,315 620,320 686,332" stroke="#7c3aed" stroke-width="2.2" fill="none" marker-end="url(#arrowP)"/>
+  <path d="M410,295 C410,400 420,440 430,452" stroke="#7c3aed" stroke-width="2.2" fill="none" marker-end="url(#arrowP)"/>
+
+  <!-- agent tools -> Bedrock (down, from below the memory box) -->
+  <path d="M480,506 C480,580 500,620 510,658" stroke="#b45309" stroke-width="2.2" fill="none" marker-end="url(#arrow)" opacity="0.8"/>
+  <path d="M650,506 C650,580 640,620 630,658" stroke="#b45309" stroke-width="2.2" fill="none" marker-end="url(#arrow)" opacity="0.8"/>
+
+  <!-- agent -> output -->
+  <path d="M770,300 C830,300 840,360 876,375" stroke="#059669" stroke-width="2.6" fill="none" marker-end="url(#arrow)"/>
+  <path d="M685,366 C780,366 800,410 876,420" stroke="#059669" stroke-width="2.4" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- at risk label -->
+  <text x="695" y="322" font-size="10.5" font-weight="700" fill="#dc2626">at risk → draft</text>
+
+  <text x="40" y="860" font-size="12.5" fill="#94a3b8">Flow: ① user submits two transcripts → ② the Strands agent runs its loop (Tool A extract → memory → Tool B follow-through → draft) with ④ Amazon Bedrock doing the reasoning → ⑤ final report back to the user.</text>
+  <text x="40" y="882" font-size="12.5" fill="#94a3b8">Sample transcripts are synthetic (no real meeting content or PII).</text>
 </svg>

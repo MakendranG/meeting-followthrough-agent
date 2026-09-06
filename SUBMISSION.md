@@ -22,14 +22,22 @@ Use this to make sure nothing required is missing before submitting on Devpost.
         (`gh repo view` reports `licenseInfo: MIT License`). Copyright line now
         reads "Makendran".
 - [x] **README** — present, with cold-start setup a stranger can follow.
-- [x] **Architecture diagram** — `ARCHITECTURE.md` (Mermaid).
+- [x] **Architecture diagram** — `ARCHITECTURE.md` (Mermaid) + a rendered
+      `docs/architecture.png` for upload. Per the FAQ it labels all five required
+      elements: ① user interface (CLI + Streamlit), ② Strands Agents core +
+      agentic loop, ③ tools & integrations, ④ AWS services (Bedrock), ⑤ output.
 - [ ] **Demo video (≤ 5 minutes)** — record using `DEMO_SCRIPT.md`. Must:
       - [ ] show the project working end-to-end (the follow-through table + nudge)
       - [ ] cover (1) the problem, (2) who it's for, (3) why it matters
       - [ ] be uploaded publicly to YouTube or Vimeo; put the link on Devpost
       - [ ] say "Strands Agents SDK" out loud / on a slide
-- [ ] **AWS Builder ID** — create one at the AWS Builder ID portal and add it to
-      the Devpost submission form.
+- [ ] **AWS Builder ID** — create one at profile.aws.amazon.com; on the Devpost
+      form **enter the email address you used to create it** (per the FAQ).
+- [x] **One track only** — submitted to Professional Agents only.
+- [x] **Synthetic data** — sample transcripts are synthetic (no real content/PII),
+      per the FAQ recommendation.
+- [x] **Newly created in the submission period** — built fresh with standard
+      tools + an AI assistant (allowed); not a repackaged prior project.
 - [x] *(Optional, scores higher)* **Live demo link** —
       https://meeting-followthrough-agent.streamlit.app/ (Streamlit Community
       Cloud, **keyless Demo mode** — no Secrets needed). Add AWS Secrets only if

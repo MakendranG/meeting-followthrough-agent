@@ -119,8 +119,11 @@ in the repo. (Source: `docs/architecture.svg`; a Mermaid version is in
 
 ## AWS Builder ID
 
+Per the FAQ, **enter the email address you used to create your AWS Builder ID**
+(create/manage one at https://profile.aws.amazon.com or via builder.aws.com).
+
 ```
-<your AWS Builder ID>
+<the email address for your AWS Builder ID>
 ```
 
 ---
@@ -148,3 +151,21 @@ switch to "Live agent" mode, and click Run. Or clone the repo and run
 ```
 <paste your builder.aws.com article URL here after publishing BUILDER_ARTICLE.md>
 ```
+
+---
+
+## FAQ-compliance notes (for your own reference — not form fields)
+
+- **One track only:** submitted to **Professional Agents** only (the FAQ says a
+  project may fall into just one track).
+- **Newly created in the submission period:** built fresh during the Aug 10 –
+  Sep 14, 2026 window using standard tools (Strands Agents SDK, AWS SDKs) and an
+  AI coding assistant — which the rules explicitly allow. No pre-existing project
+  was repackaged.
+- **Synthetic data:** both sample transcripts are synthetic — no real meeting
+  content, no PII — matching the FAQ's recommendation to use synthetic/anonymized
+  data.
+- **Public repo + license:** the repo is public with an MIT `LICENSE` detected in
+  the About section.
+- **No secrets:** credentials come from environment variables / Streamlit Secrets
+  only; the public demo runs keyless.

@@ -3,6 +3,7 @@
 **Track:** Professional Agents
 **Project:** Meeting Follow-Through Agent
 **Built With:** Strands Agents SDK + Amazon Bedrock
+**Repository:** https://github.com/MakendranG/meeting-followthrough-agent (public)
 **Deadline:** 15 Sept 2026 @ 5:30am GMT+5:30 — submit 3–4 hours early.
 
 Use this to make sure nothing required is missing before submitting on Devpost.
@@ -11,14 +12,14 @@ Use this to make sure nothing required is missing before submitting on Devpost.
 
 - [x] **Text description** — what it does, who it's for, how it works
       → see `README.md` (leads with the problem; names Strands Agents explicitly).
-- [ ] **Public URL to code repo** — push this folder to a public GitHub repo.
+- [x] **Public URL to code repo** —
+      https://github.com/MakendranG/meeting-followthrough-agent (public).
 - [x] **All source code + setup instructions to run it** — `agent.py`, `main.py`,
       `demo.sh`, `requirements.txt`, `.env.example`, `sample_data/`.
 - [x] **MIT or Apache license** — `LICENSE` (MIT) is present.
-      - [ ] **Confirm it's visible in the repo's About/sidebar** on GitHub. GitHub
-        auto-detects a top-level `LICENSE` file; after pushing, check that the
-        repo sidebar shows "MIT License." Add a placeholder name in the
-        copyright line if you haven't (currently `<Your Name>`).
+      - [x] **Visible in the repo's About/sidebar** — GitHub auto-detected it
+        (`gh repo view` reports `licenseInfo: MIT License`). Copyright line now
+        reads "Makendran".
 - [x] **README** — present, with cold-start setup a stranger can follow.
 - [x] **Architecture diagram** — `ARCHITECTURE.md` (Mermaid).
 - [ ] **Demo video (≤ 5 minutes)** — record using `DEMO_SCRIPT.md`. Must:
@@ -45,9 +46,9 @@ Use this to make sure nothing required is missing before submitting on Devpost.
       `agent.py`/`main.py` read `AWS_*` / `BEDROCK_MODEL_ID` from the env only.
 - [x] `.env` is git-ignored (only `.env.example` with placeholders is committed).
 - [x] `.venv/` and generated `memory/*.json` are git-ignored.
-- [ ] **Scan the repo one more time before pushing** (e.g. `git secrets`, or a
-      manual grep for `AKIA` / `aws_secret_access_key`) — verified no secrets in
-      tracked source at build time; re-verify after any edits.
+- [x] **Repo scanned before pushing** — verified no secrets in tracked source
+      (matches appeared only inside the git-ignored `.venv/`). Re-verify after
+      any future edits with a grep for `AKIA` / `aws_secret_access_key`.
 
 ## Judging-criteria self-check
 
@@ -64,8 +65,8 @@ Use this to make sure nothing required is missing before submitting on Devpost.
 
 ## Before you click submit
 
-- [ ] Repo is **public**.
-- [ ] Fill in the copyright name in `LICENSE`.
+- [x] Repo is **public** — https://github.com/MakendranG/meeting-followthrough-agent
+- [x] Copyright name filled in `LICENSE` ("Makendran").
 - [ ] `demo.sh` runs clean from a fresh clone (test on a machine without the
       `.venv` already present).
 - [ ] Video link works in an incognito window.

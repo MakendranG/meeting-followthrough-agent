@@ -3,6 +3,8 @@
 *An "Agents for Humans" hackathon submission — Professional Agents track.*
 **Built With: Strands Agents SDK.**
 
+**Repository:** https://github.com/MakendranG/meeting-followthrough-agent
+
 > **The action item you agreed to last week? Nobody checked if it got done.**
 > This agent does. It reads a meeting, remembers who committed to what, and at
 > the *next* meeting tells you exactly which promises were kept, which are still
@@ -17,6 +19,7 @@ recurring meetings, not just another notes summarizer.
 ## Try it in one command
 
 ```bash
+git clone https://github.com/MakendranG/meeting-followthrough-agent.git
 cd meeting-followthrough-agent
 AWS_REGION=us-east-1 ./demo.sh      # creates a venv, installs deps, runs the full demo
 ```
@@ -98,6 +101,7 @@ meeting-followthrough-agent/
 
 ### 1. Install
 ```bash
+git clone https://github.com/MakendranG/meeting-followthrough-agent.git
 cd meeting-followthrough-agent
 python -m venv .venv
 source .venv/bin/activate          # Windows: .venv\Scripts\activate

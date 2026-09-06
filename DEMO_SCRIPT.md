@@ -86,7 +86,8 @@ Narrate each step as it prints:
 
 ## 4:45–5:00 · Close
 
-**On screen:** Repo URL + "Built With: Strands Agents SDK" + MIT license badge.
+**On screen:** Repo URL (`github.com/MakendranG/meeting-followthrough-agent`) +
+"Built With: Strands Agents SDK" + MIT license badge.
 
 **Say:**
 > "Meeting Follow-Through Agent — it makes sure the things people promise in

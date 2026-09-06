@@ -111,10 +111,9 @@ https://github.com/MakendranG/meeting-followthrough-agent
 
 ## Architecture diagram (REQUIRED)
 
-Upload an image/PDF of the architecture. Options:
-- Screenshot/export the Mermaid diagram in `ARCHITECTURE.md`, **or**
-- Screenshot the diagram on the GitHub Pages project page.
-Allowed: pdf, ppt, pptx, png, jpg, jpeg (max 35 MB).
+Upload the ready-made image: **`docs/architecture.png`** (1400×887 PNG) — already
+in the repo. (Source: `docs/architecture.svg`; a Mermaid version is in
+`ARCHITECTURE.md`.) Allowed: pdf, ppt, pptx, png, jpg, jpeg (max 35 MB).
 
 ---
 

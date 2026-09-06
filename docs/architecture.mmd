@@ -1,0 +1,25 @@
+flowchart TD
+    M1["🗓️ Meeting 1 transcript"]
+    M2["🗓️ Meeting 2 transcript"]
+    A1["🔧 Tool A: extract_action_items<br/>(LLM · Amazon Bedrock)"]
+    A2["🔧 Tool A: extract_action_items<br/>new items (LLM · Amazon Bedrock)"]
+    B["🔧 Tool B: check_followthrough<br/>(LLM · Amazon Bedrock)"]
+    MEM[("💾 Persistent memory<br/>meeting_1_action_items.json")]
+    DRAFT["✍️ LLM drafting<br/>draft_followup_message"]
+    OUT["📄 Final Report<br/>(a) new items<br/>(b) follow-through table<br/>(c) follow-up messages"]
+
+    M1 --> A1 --> MEM
+    M2 --> A2 --> OUT
+    MEM --> B
+    M2 --> B
+    B --> OUT
+    B -->|NOT_MENTIONED / at risk| DRAFT --> OUT
+
+    classDef bedrock fill:#7c3aed,stroke:#5b21b6,color:#fff;
+    classDef store fill:#0ea5e9,stroke:#0369a1,color:#fff;
+    classDef io fill:#e2e8f0,stroke:#94a3b8,color:#1e293b;
+    classDef out fill:#10b981,stroke:#059669,color:#fff;
+    class A1,A2,B,DRAFT bedrock;
+    class MEM store;
+    class M1,M2 io;
+    class OUT out;

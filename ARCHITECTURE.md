@@ -1,5 +1,11 @@
 # Architecture
 
+![Meeting Follow-Through Agent architecture](./docs/architecture.png)
+
+*(Rendered diagram: `docs/architecture.png` — upload this file to the Devpost
+"Architecture diagram" field. Source: `docs/architecture.svg` / the Mermaid
+below.)*
+
 The Meeting Follow-Through Agent is built with the **Strands Agents SDK** and
 uses a **two-tool design** plus a small local **persistent-memory** layer. That
 combination is what makes it more than a plain meeting summarizer: it doesn't

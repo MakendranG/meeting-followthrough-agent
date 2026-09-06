@@ -227,6 +227,13 @@ st.markdown(
         <span>🧠 Amazon Bedrock · Claude</span>
         <span>🏆 Agents for Humans · Professional track</span>
       </div>
+      <div style="margin-top:.6rem">
+        <a href="https://makendrang.github.io/meeting-followthrough-agent/" target="_blank"
+           style="display:inline-block;background:#fff;color:#6d28d9;font-weight:700;
+                  padding:8px 18px;border-radius:999px;text-decoration:none;font-size:.9rem">
+          🌐 Project page
+        </a>
+      </div>
     </div>
     """,
     unsafe_allow_html=True,
@@ -287,6 +294,9 @@ with st.sidebar:
         unsafe_allow_html=True,
     )
     st.caption("Two Strands tools + memory across meetings — more than a summarizer.")
+    st.markdown(
+        "🌐 [Project page](https://makendrang.github.io/meeting-followthrough-agent/)",
+    )
 
 
 if not live_available:
